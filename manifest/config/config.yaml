@@ -1,0 +1,40 @@
+# HTTP Server.
+server:
+  address: ":8000"
+#  httpsAddr: ":443"
+#  httpsCertPath: ""
+#  httpsKeyPath: ""
+  serverRoot: "resource/public"
+  dumpRouterMap: true
+  routeOverWrite: true
+  accessLogEnabled: true
+  accessLogPattern: "access-{Ymd}.log"
+  sessionPath: "temp/sessions"
+  openapiPath: "/api.json"
+  swaggerPath: "/swagger"
+
+# Global logging.
+logger:
+  path: "temp/logs/default"
+  level: "all"
+  stdout: true
+  ctxKeys: [ "RequestId" ]
+
+# Database.
+database:
+  logger:
+    path: "temp/logs/sql"
+    level: "all"
+    stdout: true
+    ctxKeys: [ "RequestId" ]
+
+  default:
+    link: "mysql:root:root@tcp(127.0.0.1:3306)/gf-cx"
+    debug: "true"
+    prefix: "c_"
+    charset: "utf8"
+    timezone: "Asia/Shanghai"
+
+# 文件上传设置
+upload:
+  path: "temp/upload"
