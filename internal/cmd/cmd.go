@@ -29,6 +29,7 @@ var (
 					controller.Goods,
 					controller.User.SignUp,
 					controller.User.SignIn,
+					controller.Game.Start,
 				)
 				group.Group("/", func(group *ghttp.RouterGroup) {
 					group.Middleware(service.Middleware().Auth)
