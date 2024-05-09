@@ -5,6 +5,7 @@ import (
 	"gf-cx/internal/consts"
 	"gf-cx/internal/controller"
 	"gf-cx/internal/service"
+
 	"github.com/gogf/gf/v2/net/goai"
 
 	"github.com/gogf/gf/v2/frame/g"
@@ -30,6 +31,7 @@ var (
 					controller.User.SignUp,
 					controller.User.SignIn,
 					controller.Game.Start,
+					controller.Ocr.Do,
 				)
 				group.Group("/", func(group *ghttp.RouterGroup) {
 					group.Middleware(service.Middleware().Auth)
