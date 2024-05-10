@@ -1,0 +1,1 @@
+cd /data/wwwroot/gf-cx && gf run main.go
