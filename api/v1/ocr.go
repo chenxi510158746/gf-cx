@@ -1,6 +1,10 @@
 package v1
 
-import "github.com/gogf/gf/v2/frame/g"
+import (
+	"gf-cx/internal/model"
+
+	"github.com/gogf/gf/v2/frame/g"
+)
 
 type OcrReq struct {
 	g.Meta   `path:"/ocr/do" method:"post" tags:"AI识别" summary:"文字识别"`
@@ -8,9 +12,5 @@ type OcrReq struct {
 }
 
 type OcrRes struct {
-	List []*OcrItem `json:"list" dc:"识别列表"`
-}
-
-type OcrItem struct {
-	Text string `json:"text" dc:"识别结果文字"`
+	List []*model.OcrItem `json:"list" dc:"识别列表"`
 }
