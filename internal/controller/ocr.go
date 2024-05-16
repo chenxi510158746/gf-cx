@@ -16,7 +16,7 @@ type cOcr struct {
 
 func (c *cOcr) Do(ctx context.Context, req *v1.OcrReq) (res *v1.OcrRes, err error) {
 	outFile := "/data/wwwroot/gf-cx/temp/result.txt"
-	cmd := exec.Command("/data/software/anaconda3/envs/paddle_env/bin/python3", "/data/wwwroot/gf-cx/ocr.py", req.FilePath, outFile)
+	cmd := exec.Command("/data/software/anaconda3/envs/paddle_env/bin/python3", "/data/wwwroot/gf-cx/ocr.py", req.FilePath, outFile, "korean")
 	output, err := cmd.Output()
 	if err != nil {
 		return nil, err
